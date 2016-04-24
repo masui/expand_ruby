@@ -1,28 +1,23 @@
-# re-expand
+# re_expand
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/re_expand`. To experiment with that code, run `bin/console` for an interactive prompt.
+* Generates all the text strings that match the
+given regexp.
+* If a filter pattern is given,
+the output is filtered by the pattern.
 
-TODO: Delete this and the text above, and describe your gem
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 're_expand'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+## Install
 
     $ gem install re_expand
 
 ## Usage
 
-TODO: Write usage instructions here
+    require 're_expand'
+    "test (a|b|c)".expand { |s,a|
+      puts s
+    }
+    # "test a",  "test b", ...
+    "(a|b)(1|2)".expand
+    # => ['a1', 'a2', 'b1', 'b2']
 
 ## Development
 
@@ -32,7 +27,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/masui/expand_ruby.
+Bug reports and pull requests are welcome on GitHub at [https://github.com/masui/expand_ruby](https://github.com/masui/expand_ruby).
 
 
 ## License
