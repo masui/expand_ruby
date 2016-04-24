@@ -4,15 +4,15 @@ VERSION=0.1.2
 test:
 	rake test
 
-# Build re_expand-0.1.0.gem into the pkg directory
+# Build re_expand gem into the pkg directory
 build:
 	rake build
 
-# Build and install re_expand-0.1.0.gem into system gems
+# Build and install re_expand gem into system gems
 install:
 	rake install
 
-# Create tag v0.1.0 and build and push re_expand-0.1.0.gem to Rubygems
+# Create tag v?.?.? and build and push re_expand gem to Rubygems
 release:
 	rake release
 
