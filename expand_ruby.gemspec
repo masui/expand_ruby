@@ -1,10 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'expand_ruby/version'
+require 're_expand/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "expand_ruby"
+  spec.name          = "re_expand"
   spec.version       = ExpandRuby::VERSION
   spec.authors       = ["Toshiyuki Masui"]
   spec.email         = ["masui@pitecan.com"]
@@ -30,4 +30,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.10"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest"
+
+  spec.add_development_dependency "asearch",'>= 0.0.1'
 end
