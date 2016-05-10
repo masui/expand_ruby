@@ -79,7 +79,7 @@ module ExpandRuby
       lists[0] = list
       #
       loopcount = 0
-      (0..1000).each { |length|
+      (0..10000).each { |length|
       #loop do 
       #  length = loopcount
         list = lists[length]
@@ -87,7 +87,7 @@ module ExpandRuby
         # puts "#{length} - #{list.length}"
         list.each { |entry|
           srcnode = Node.node(entry.id)
-          if list.length * srcnode.trans.length < 10000 then
+          if list.length * srcnode.trans.length < 100000 then
             srcnode.trans.each { |trans|
               ss = entry.substrings.dup
               srcnode.pars.each { |i|
