@@ -30,4 +30,14 @@ class ExpandRubyTest < Minitest::Test
     assert res[0].member?(['abefghijn', 'ab/hij'])
     assert res[0].member?(['cdefgklmn', 'cd/klm'])
   end
+
+  def test_substitute
+    g = ExpandRuby::Generator.new
+    g.add "(a\taaa|b\tbbb)(c|d)", '#{$1}/#{$2}'
+    res = g.generate(' a ')
+    assert res[0].member?(['ac', 'aaa/c'])
+    assert res[0].member?(['ad', 'aaa/d'])
+    assert !res[0].member?(['bc', 'bbb/c'])
+    assert !res[0].member?(['bd', 'bbb/d'])
+  end
 end
