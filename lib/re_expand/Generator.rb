@@ -234,8 +234,7 @@ module ExpandRuby
           n2.pars = @pars.dup
           return [n1, n2]
         else
-          puts 'missing )'
-          exit
+          raise 'missing )'
         end
       else
         startnode = Node.new
